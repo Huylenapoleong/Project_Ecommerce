@@ -4,7 +4,6 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import ProductCard from '@/components/product-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
 import { productService } from '@/services/productService';
 import { Image } from 'expo-image';
 import { useEffect, useState } from 'react';
@@ -45,19 +44,10 @@ export default function HomeScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="house.fill"
-          style={styles.headerImage}
-        />
-      }
-    >
+      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}>
       {loading ? (
         <ThemedView>
-          <ActivityIndicator size="large" color="#E94141" style={{ marginTop: 20 }} />
+          <ActivityIndicator size="large" color="lightblue" style={{ marginTop: 20 }} />
           <ThemedText style={{ textAlign: 'center', marginTop: 10 }}>Loading...</ThemedText>
         </ThemedView>
       ) : categories && products ? (
