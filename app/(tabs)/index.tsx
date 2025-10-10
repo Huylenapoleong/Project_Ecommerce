@@ -52,20 +52,23 @@ export default function HomeScreen() {
         </ThemedView>
       ) : categories && products ? (
         <>
-          <ThemedText style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
+          <ThemedText style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>
             Categories
           </ThemedText>
           <FlatList
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            style={{ marginBottom: 20 }}
             data={categories}
             renderItem={({ item }) => (
-              <ThemedView style={{ padding: 10, borderWidth: 1, borderColor: '#ccc' }}>
+              <ThemedView style={{ padding: 10, borderWidth: 1, borderColor: '#ccc', width: 120, marginRight: 10, borderRadius: 5, alignItems: 'center' }}>
                 <Image source={{ uri: item.image }} style={{ width: '100%', height: 150, borderRadius: 5 }} />
                 <ThemedText style={{ fontSize: 18, marginVertical: 5 }}>{item.name}</ThemedText>
               </ThemedView>
             )}
             keyExtractor={item => item.id}
           />
-          <ThemedText style={{ fontSize: 24, fontWeight: 'bold', marginVertical: 10, textAlign: 'center' }}>
+          <ThemedText style={{ fontSize: 24, fontWeight: 'bold', marginVertical: 10 }}>
             Products
           </ThemedText>
           <FlatList
